@@ -39,7 +39,10 @@ class MainActivity: Activity(),IEventsContract.IEventsView {
 
         changeStatusBarColor()
         initializeComponents()
+        callEvents()
 
+    }
+    private fun callEvents(){
         runOnUiThread {
             ViewUtils.loading(this)
             presenter.getEvents(BaseUrl.URL.value)

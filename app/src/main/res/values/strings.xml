@@ -16,4 +16,9 @@
     <string name="price_share">Por apenas:  </string>
     <string name="final_share">Não vai ficar de fora !!!  </string>
 
+
+    <!-- Strings Splash  -->
+    <string name="processo">Processo Seletivo  </string>
+    <string name="desenvolvido"><b> Desenvolvido por: </b>Aleksiam Gutenberg  </string>
+
 </resources>

@@ -11,8 +11,8 @@ import android.widget.Toast
 import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.sicredi.sicrediteste.R
+import com.sicredi.sicrediteste.databinding.ActivityDetailsMainBinding
 import com.sicredi.sicrediteste.databinding.CustomDialogCheckinBinding
-import com.sicredi.sicrediteste.databinding.DetailsMainBinding
 import com.sicredi.sicrediteste.di.component.DaggerCheckInComponent
 import com.sicredi.sicrediteste.di.module.CheckInModule
 import com.sicredi.sicrediteste.presenter.CheckInPresenter
@@ -22,10 +22,11 @@ import com.sicredi.sicrediteste.utils.ViewUtils
 import com.sicredi.sicrediteste.view.enums.BaseUrl
 import javax.inject.Inject
 
-class DetailsMain: Activity(), ICheckInContract.ICheckInView {
+class DetailsMainActivity: Activity(), ICheckInContract.ICheckInView {
 
-    private lateinit var binding: DetailsMainBinding
+    private lateinit var binding: ActivityDetailsMainBinding
     private lateinit var bindingCustom: CustomDialogCheckinBinding
+    private lateinit var dialog: Dialog
 
 
     @Inject
@@ -42,7 +43,7 @@ class DetailsMain: Activity(), ICheckInContract.ICheckInView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = DetailsMainBinding.inflate(layoutInflater)
+        binding = ActivityDetailsMainBinding.inflate(layoutInflater)
         bindingCustom = CustomDialogCheckinBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -70,16 +71,23 @@ class DetailsMain: Activity(), ICheckInContract.ICheckInView {
             .error(R.drawable.img_not_found)
             .into(binding.ivFundo)
 
+        setTexts()
+        setDialog()
+        clickComponents()
+
+    }
+    private fun setTexts(){
+
         binding.tvPrice.text    =  price
         binding.tvDesc.text     =  desc
         binding.tvCalendar.text = date
-
-
+    }
+    private fun clickComponents(){
         binding.btShare.setOnClickListener {
             compartilharEvento()
         }
         binding.btCheck.setOnClickListener {
-            abrirDialog()
+            dialog.show()
         }
     }
     private fun getExtras(){
@@ -92,13 +100,7 @@ class DetailsMain: Activity(), ICheckInContract.ICheckInView {
     private fun compartilharEvento(){
 
         val intent = Intent(Intent.ACTION_SEND)
-        val msg = title+
-                "\n"+
-                "\n"+ getString(R.string.dia_share)+" "+date+
-                "\n"+
-                "\n"+ getString(R.string.price_share)+" "+price+
-                "\n"+
-                "\n"+ getString(R.string.final_share)
+        val msg = gerarMsg()
 
 
         intent.putExtra(Intent.EXTRA_SUBJECT,getString(R.string.title_share))
@@ -108,18 +110,28 @@ class DetailsMain: Activity(), ICheckInContract.ICheckInView {
 
     }
 
+    private fun gerarMsg():String{
+        return title+
+                "\n"+
+                "\n"+ getString(R.string.dia_share)+" "+date+
+                "\n"+
+                "\n"+ getString(R.string.price_share)+" "+price+
+                "\n"+
+                "\n"+ getString(R.string.final_share)
+    }
 
     fun fazerCheckIn(eventId:String,nome:String,email:String){
         presenter.postCheckIn(BaseUrl.URL.value,eventId,nome,email)
     }
 
-
-    private fun abrirDialog(){
-        val dialog = Dialog(this)
+    private fun setDialog(){
+        dialog = Dialog(this)
         dialog.window?.setBackgroundDrawableResource(android.R.color.transparent)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(bindingCustom.root)
-
+        clickCheckDialog()
+    }
+    private fun clickCheckDialog(){
         bindingCustom.btnCheck.setOnClickListener {
             val nome = bindingCustom.etNome.text.toString()
             val email = bindingCustom.etEmail.text.toString()
@@ -138,8 +150,6 @@ class DetailsMain: Activity(), ICheckInContract.ICheckInView {
                 Toast.makeText(this,"Informe seu nome:",Toast.LENGTH_LONG).show()
             }
         }
-
-        dialog.show()
     }
     override fun onSucess() {
         runOnUiThread {

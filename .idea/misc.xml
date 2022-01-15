@@ -8,8 +8,10 @@
         <entry key="app/src/main/res/drawable/card_events.xml" value="0.20615384615384616" />
         <entry key="app/src/main/res/drawable/circle_button.xml" value="0.20615384615384616" />
         <entry key="app/src/main/res/drawable/degrade_fundo.xml" value="0.18981481481481483" />
+        <entry key="app/src/main/res/drawable/degrade_splash.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/fundo_curvado.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19025641025641027" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="app/src/main/res/layout/custom_dialog_checkin.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/details_main.xml" value="0.25" />
         <entry key="app/src/main/res/layout/item_cards_events.xml" value="0.19322916666666667" />

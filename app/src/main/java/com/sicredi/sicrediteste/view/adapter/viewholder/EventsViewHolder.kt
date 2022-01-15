@@ -12,7 +12,7 @@ import com.bumptech.glide.load.resource.bitmap.CenterCrop
 
 import com.bumptech.glide.request.RequestOptions
 import com.sicredi.sicrediteste.R
-import com.sicredi.sicrediteste.view.activity.DetailsMain
+import com.sicredi.sicrediteste.view.activity.DetailsMainActivity
 
 
 class EventsViewHolder(private val binding: ItemCardsEventsBinding, var context: Context):
@@ -33,7 +33,7 @@ class EventsViewHolder(private val binding: ItemCardsEventsBinding, var context:
             .into(binding.iv)
 
         itemView.setOnClickListener {
-            val intent = Intent(context, DetailsMain::class.java)
+            val intent = Intent(context, DetailsMainActivity::class.java)
             intent.putExtra("image", eventsDTO.image)
             intent.putExtra("price", eventsDTO.price)
             intent.putExtra("desc", eventsDTO.description)
