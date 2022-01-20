@@ -9,6 +9,8 @@
 - Dagger2
 - GSON
 - Retrofit
+- RXJava
+- Junit
 
 # Arquitetura 
 - MVP
