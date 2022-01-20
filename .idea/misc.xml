@@ -10,6 +10,12 @@
         <entry key="app/src/main/res/drawable/degrade_fundo.xml" value="0.18981481481481483" />
         <entry key="app/src/main/res/drawable/degrade_splash.xml" value="0.209375" />
         <entry key="app/src/main/res/drawable/fundo_curvado.xml" value="0.18981481481481483" />
+        <entry key="app/src/main/res/drawable/ic_calendar.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_img_not_found.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_img_not_found_2.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_logo_white.xml" value="0.209375" />
+        <entry key="app/src/main/res/drawable/ic_share.xml" value="0.209375" />
+        <entry key="app/src/main/res/layout/activity_details_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19025641025641027" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.21" />
         <entry key="app/src/main/res/layout/custom_dialog_checkin.xml" value="0.19322916666666667" />

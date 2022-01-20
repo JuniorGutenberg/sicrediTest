@@ -1,12 +1,12 @@
 package com.sicredi.sicrediteste.model
 
 import com.sicredi.sicrediteste.dto.EventsDTO
-import retrofit2.Call
+import io.reactivex.Observable
 import retrofit2.http.GET
 
 interface EndPoint {
 
     @GET("events")
-    fun getEvents(): Call<List<EventsDTO>>
+    fun getEvents(): Observable<List<EventsDTO>>
 
 }

@@ -6,6 +6,7 @@
     <!-- Strings Custom Dialog  -->
     <string name="title_custom">Informe seus dados: </string>
     <string name="hint_nome">Informe seu nome: </string>
+    <string name="check_in">Check-in </string>
     <string name="hint_email">Informe seu email: </string>
     <string name="btn_checkin">Check-in </string>
 
@@ -20,5 +21,11 @@
     <!-- Strings Splash  -->
     <string name="processo">Processo Seletivo  </string>
     <string name="desenvolvido"><b> Desenvolvido por: </b>Aleksiam Gutenberg  </string>
+
+
+    <!-- Strings Detalhes  -->
+    <string name="error_email">Informe Um E-mail válido </string>
+    <string name="error_nome">Informe um nome válido</string>
+    <string name="check_sucess">Check-in Realizado com Sucesso!!</string>
 
 </resources>

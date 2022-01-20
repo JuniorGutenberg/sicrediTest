@@ -29,7 +29,7 @@ class EventsViewHolder(private val binding: ItemCardsEventsBinding, var context:
             with(context)
             .load(eventsDTO.image)
             .apply(requestOptions)
-            .error(R.drawable.img_not_found)
+            .error(R.drawable.ic_img_not_found)
             .into(binding.iv)
 
         itemView.setOnClickListener {

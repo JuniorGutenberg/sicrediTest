@@ -6,27 +6,27 @@
     <View
         android:layout_width="match_parent"
         android:background="@drawable/degrade_fundo"
-        android:layout_height="200dp"/>
+        android:layout_height="@dimen/height_imv_details"/>
     <TextView
         android:layout_width="wrap_content"
         android:text="@string/nome_main"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/top_items_details"
         android:fontFamily="@font/roboto_regular"
-        android:layout_marginStart="25dp"
+        android:layout_marginStart="@dimen/start_items_details"
         android:textColor="@color/white"
-        android:textSize="24sp"
+        android:textSize="@dimen/text_size_title_main"
         android:layout_height="wrap_content"/>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="@dimen/bottom_first_circle_btn_details"
         android:orientation="vertical"
         android:background="@drawable/fundo_curvado"
         android:layout_height="match_parent">
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_events"
-            android:layout_marginTop="20dp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp"
+            android:layout_marginTop="@dimen/top_items_details"
+            android:layout_marginStart="@dimen/start_text_details"
+            android:layout_marginEnd="@dimen/start_text_details"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
     </LinearLayout>

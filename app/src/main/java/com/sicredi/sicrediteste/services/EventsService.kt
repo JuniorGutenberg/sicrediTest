@@ -1,10 +1,10 @@
 package com.sicredi.sicrediteste.services
 
 import com.sicredi.sicrediteste.dto.EventsDTO
-import retrofit2.Call
+import io.reactivex.Observable
 
 interface EventsService {
 
-    fun getEvents(url:String):Call<List<EventsDTO>>
+    fun getEvents(url:String): Observable<List<EventsDTO>>
 
 }

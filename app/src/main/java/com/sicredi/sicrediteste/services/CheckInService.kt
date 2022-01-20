@@ -1,8 +1,9 @@
 package com.sicredi.sicrediteste.services
 
-import retrofit2.Call
-import retrofit2.Response
+import io.reactivex.Observable
+import io.reactivex.internal.observers.EmptyCompletableObserver
+
 
 interface CheckInService {
-    fun addCheckIn(url:String,eventId:String, name:String, email:String): Call<Response<Throwable>>
+    fun addCheckIn(url:String,eventId:String, name:String, email:String):Observable<EmptyCompletableObserver>
 }

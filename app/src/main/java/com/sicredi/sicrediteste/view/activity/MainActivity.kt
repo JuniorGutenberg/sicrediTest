@@ -36,7 +36,6 @@ class MainActivity: Activity(),IEventsContract.IEventsView {
             .inject(this)
 
 
-
         changeStatusBarColor()
         initializeComponents()
         callEvents()

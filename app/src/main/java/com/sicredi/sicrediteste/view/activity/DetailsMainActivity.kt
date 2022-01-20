@@ -21,6 +21,9 @@ import com.sicredi.sicrediteste.utils.FormatUtils
 import com.sicredi.sicrediteste.utils.ViewUtils
 import com.sicredi.sicrediteste.view.enums.BaseUrl
 import javax.inject.Inject
+import android.util.Patterns
+import androidx.core.util.PatternsCompat
+
 
 class DetailsMainActivity: Activity(), ICheckInContract.ICheckInView {
 
@@ -68,7 +71,7 @@ class DetailsMainActivity: Activity(), ICheckInContract.ICheckInView {
         Glide.with(this)
             .load(intent.getStringExtra("image"))
             .centerCrop()
-            .error(R.drawable.img_not_found)
+            .error(R.drawable.ic_img_not_found)
             .into(binding.ivFundo)
 
         setTexts()
@@ -137,25 +140,28 @@ class DetailsMainActivity: Activity(), ICheckInContract.ICheckInView {
             val email = bindingCustom.etEmail.text.toString()
 
             if(nome.isNotEmpty()){
-                if(email.isNotEmpty()){
+                if(isValidEmail(email)){
                     fazerCheckIn(eventId,nome,email)
                     dialog.dismiss()
                     runOnUiThread {
                         ViewUtils.loading(this)
                     }
                 }else{
-                    Toast.makeText(this,"Informe seu email:",Toast.LENGTH_LONG).show()
+                    Toast.makeText(this,R.string.error_email,Toast.LENGTH_LONG).show()
                 }
             }else{
-                Toast.makeText(this,"Informe seu nome:",Toast.LENGTH_LONG).show()
+                Toast.makeText(this,R.string.error_nome,Toast.LENGTH_LONG).show()
             }
         }
+    }
+     fun isValidEmail(email: CharSequence): Boolean {
+        return email.isNotEmpty() && PatternsCompat.EMAIL_ADDRESS.matcher(email).matches()
     }
     override fun onSucess() {
         runOnUiThread {
             ViewUtils.dismissLoading()
         }
-        Toast.makeText(this,"Check-in Realizado com Sucesso!!",Toast.LENGTH_LONG).show()
+        Toast.makeText(this,R.string.check_sucess,Toast.LENGTH_LONG).show()
         finish()
     }
 

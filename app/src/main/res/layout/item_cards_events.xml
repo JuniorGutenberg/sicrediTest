@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_marginStart="15dp"
-    android:layout_marginEnd="15dp"
-    android:layout_marginBottom="10dp"
-    android:layout_marginTop="10dp"
+    android:layout_marginStart="@dimen/end_text_details"
+    android:layout_marginEnd="@dimen/end_text_details"
+    android:layout_marginBottom="@dimen/start_text_details"
+    android:layout_marginTop="@dimen/start_text_details"
     android:background="@drawable/card_events"
-    android:elevation="5dp"
-    android:layout_height="250dp">
+    android:elevation="@dimen/elevation_circle_btn_details"
+    android:layout_height="@dimen/height_imv_details">
     <ImageView
         android:id="@+id/iv"
         android:layout_width="match_parent"
@@ -18,17 +18,17 @@
 
        android:layout_gravity="bottom"
        android:background="@drawable/bottom_card_events"
-       android:layout_height="50dp">
+       android:layout_height="@dimen/size_circle_btn_details">
        <TextView
            android:id="@+id/tv"
            android:layout_width="wrap_content"
            android:maxLines="1"
            android:textColor="@color/white"
-           android:textSize="22sp"
+           android:textSize="@dimen/text_size_items_details"
            android:fontFamily="@font/roboto_regular"
-           android:layout_marginTop="5dp"
-           android:layout_marginStart="15dp"
-           android:layout_marginEnd="15dp"
+           android:layout_marginTop="@dimen/elevation_circle_btn_details"
+           android:layout_marginStart="@dimen/end_text_details"
+           android:layout_marginEnd="@dimen/end_text_details"
            android:layout_gravity="center"
            android:gravity="center"
            android:ellipsize="end"
